@@ -7,7 +7,12 @@ class SocketService{
     constructor(){
 
         console.log("Init Socket Service....");
-        this._io = new Server();
+        this._io = new Server({
+            cors: {
+                origin: "*",
+                allowedHeaders: "*",
+            }
+        });
 
     }
 
